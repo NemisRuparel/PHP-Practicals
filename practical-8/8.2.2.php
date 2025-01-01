@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Employee Details</title>
     <style>
         body {
             background-color: beige;
@@ -61,7 +61,6 @@
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $currcomp = $_POST['currcomp'];
@@ -70,41 +69,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $salary = $_POST['salary'];
     $email = $_POST['email'];
     $mobileno = $_POST['mobileno'];
-    $gender = isset($_POST['gender']) ? $_POST['gender'] : "";
+    $gender = ($_POST['gender']);
 
-    
     $mobileregex = "/^[6-9][0-9]{9}$/";  
     $emailregex = "/^[a-z\d._%+-]+@[a-z\d.-]+\.[a-z]{2,}$/"; 
 
-    
     $error = false;
     $errorMessages = [];
 
-    
+
     if (empty($fname) || empty($lname) || empty($currcomp) || empty($email) || empty($mobileno)) {
-        $errorMessages[] = "Please fill all details.";
+        $errorMessages[] = "Please fill all required fields.";
         $error = true;
     }
+    
     if (!ctype_alpha($fname) || !ctype_alpha($lname)) {
-        $errorMessages[] = "Name contains only alphabets.";
+        $errorMessages[] = "First and last names must contain only letters.";
         $error = true;
     }
-    if (!is_numeric($mobileno)) {
-        $errorMessages[] = "Mobile number only contains numbers.";
+    
+    if (!is_numeric($mobileno) || !preg_match($mobileregex, $mobileno)) {
+        $errorMessages[] = "Mobile number must be a valid 10-digit number starting with 6-9.";
         $error = true;
     }
-    if (!is_numeric($exp)) {
-        $errorMessages[] = "Experience only contains numbers.";
+    
+    if (!is_numeric($exp) || $exp < 0) {
+        $errorMessages[] = "Experience must be a non-negative number.";
         $error = true;
     }
-    if (!preg_match($mobileregex, $mobileno)) {
-        $errorMessages[] = "Invalid Mobile number.";
-        $error = true;
-    }
+    
     if (!preg_match($emailregex, $email)) {
-        $errorMessages[] = "Enter valid email.";
+        $errorMessages[] = "Please enter a valid email address.";
         $error = true;
     }
+    
+    if (!is_numeric($salary) || $salary < 0) {
+        $errorMessages[] = "Salary must be a non-negative number.";
+        $error = true;
+    }
+    
     if (empty($pastcomp)) {
         $pastcomp = "-";  
     }
@@ -117,7 +120,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         echo "</div>";
     } else {
-
         echo "
         <div class='container'>
             <h1>Here's Your Details</h1>
@@ -126,23 +128,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class='box'><b>Current Company:</b> $currcomp</div>
                 <div class='box'><b>Past Company:</b> $pastcomp</div>";
         
-        if ($exp == 1) {
-            echo "<div class='box'><b>Experience:</b> $exp year</div>";
-        } else {
-            echo "<div class='box'><b>Experience:</b> $exp years</div>";
-        }
+        echo "<div class='box'><b>Experience:</b> $exp " . ($exp == 1 ? "year" : "years") . "</div>";
         
         echo "
-            <div class='box'><b>Salary:</b> ₹$salary</div>
-            <div class='box'><b>Email:</b> $email</div>
-            <div class='box'><b>Phone No.:</b> +91$mobileno</div>";
+                <div class='box'><b>Salary:</b> ₹$salary</div>
+                <div class='box'><b>Email:</b> $email</div>
+                <div class='box'><b>Phone No.:</b> +91$mobileno</div>";
         
-        if ($gender) {
+        if (!empty($gender)) {
             echo "<div class='box'><b>Gender:</b> $gender</div>";
         }
 
         echo "</div></div>";
     }
+} else {
+    echo "<div class='container'><h1>No data submitted yet</h1></div>";
 }
 ?>
 

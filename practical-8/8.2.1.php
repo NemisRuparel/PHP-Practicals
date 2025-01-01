@@ -154,6 +154,7 @@
 
             <label for="currcomp"><b>Your Current Company : </b></label>
             <input type="text" name="currcomp">
+*8
 
             <br><br>
 
@@ -187,11 +188,11 @@
             <div class="gender">
                 <div class="inner">
                     <label style="margin-left:50px">Male</label>
-                    <input type="radio" name="gender" value="Male">
+                    <input type="radio" name="gender" value="Male" required>
                 </div>
                 <div class="inner" style="margin-left:-500px">
                     <label style="margin-left:50px">Female</label>
-                    <input type="radio" name="gender" value="Female">
+                    <input type="radio" name="gender" value="Female" required>
                 </div>
             </div>
 
