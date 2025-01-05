@@ -81,6 +81,7 @@
             padding: 20px;
         }
     </style>
+    
 </head>
 <body>
     <form action="6.1.php" method="POST">
