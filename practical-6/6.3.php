@@ -77,54 +77,52 @@
 </head>
 <body>
     <h1>
-        <b>Smallest Note Calculator</b>
+        <b>Math Functions</b>
     </h1>
-    <form action="6.2.php"method="POST">
-        <input type="number"name="ipamount"placeholder="Enter Amount">
+    <form action="6.3.php"method="POST">
+        <input type="number"name="ipnumber"placeholder="Ente Number">
+        <input type="number" name="min_range" id="" placeholder="Enter Minimum Range">
+        <input type="number" name="max_range" id="" placeholder="Enter Maximum Range">
+        <input type="number"name="angle" placeholder="Enter Angle">
         <div class="btn">
             <button id="btn1"type="submit"name="calculate">Calculate</button>
             <button id="btn2"name="clr">Clear</button>
         </div>
     </form>
     <?php 
-        if ($_SERVER["REQUEST_METHOD"] == "POST") 
-        {
-            if (isset($_POST["calculate"]) && empty($_POST["ipamount"])){
-                echo"<p>Please enter amount</p>";
-            }
-            if(isset($_POST["calculate"]) && !empty($_POST["ipamount"])){
-                $input = $_POST["ipamount"];
-                $denomination = [100,50,20,10,5,2,1];
-                $noteAmount = 0;
-    
-                if ($input <= 0 or $input == 0) {
-                    echo"<p>Please enter positive amount</p>";
-                    return;
-                }
-                echo "<h1 style='margin-top:70px'>Result</h1>";
-                echo"<p><b>Minimum notes for amount : </b>".$input."</p>";
-                foreach ($denomination as $value){
-                    $count = intdiv($input, $value);
-        $noteCount[$value] = $count;
-        $input %= $value;
-                }
-                foreach ($noteCount as $note => $count) {
-                    if ($count == 0) {
-                        continue;
-                    }
-                    if ($count==1) {
-                        echo "<p><b>Rs.".$note." : </b>". $count ." note<br></p>";    
-                        continue;
-                    }
-                    echo "<p><b>Rs.".$note." : </b>". $count ." notes<br></p>";
-                }
-                
-                $totalNotes = array_sum($noteCount);
-                echo "<p><b>Minimum notes required: </b>"."$totalNotes"."</p>";
-            }
-        } 
-    ?>
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+    if (isset($_POST["calculate"]) && empty($_POST["ipnumber"])) {
+        echo "<p>Please enter number</p>";
+    }
+    if (isset($_POST["calculate"]) && empty($_POST["min_range"])) {
+        echo "<p>Please enter minimum range</p>";
+    }
+    if (isset($_POST["calculate"]) && empty($_POST["max_range"])) {
+        echo "<p>Please enter maximum range</p>";
+    }
+    if (isset($_POST["calculate"]) && empty($_POST["angle"])) {
+        echo "<p>Please enter angle</p>";
+    }
+
+    if (isset($_POST["calculate"]) && !empty($_POST["ipnumber"]) && !empty($_POST["min_range"]) && !empty($_POST["max_range"]) && !empty($_POST["angle"])) {
+        $angle = (float)$_POST["angle"];
+        $radians = deg2rad($angle);
+        $sine = sin($radians);
+        $cos = cos($radians);
+        $tan = tan($radians);
+        echo"<h1>Result</h1>";
+        echo "<p><b>Random number between " . $_POST["min_range"] . " and " . $_POST["max_range"] . " is : </b>" . rand($_POST["min_range"], $_POST["max_range"]) . "</p><br>";
+        echo "<p><b>" . $_POST["ipnumber"] . " to binary is : </b>" . decbin($_POST["ipnumber"]) . "</p><br>";
+        echo "<p><b>" . $_POST["ipnumber"] . " to octal is : </b>" . decoct($_POST["ipnumber"]) . "</p>";
+        echo "<p><b>" . $_POST["ipnumber"] . " to hexadecimal is : </b>" . dechex($_POST["ipnumber"]) . "</p><br>";
+        echo "<p><b> (". $_POST["angle"].") Sine of the Angle:</b> " . $sine . "</p>";
+        echo "<p><b> (". $_POST["angle"].") Cos of the Angle:</b> " . $cos . "</p>";
+        echo "<p><b> (". $_POST["angle"].") Tan of the Angle:</b> " . $tan . "</p>";
+
+    }
+}
+?>
+
 </body>
 </html>
-
-
