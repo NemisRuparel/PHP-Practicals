@@ -146,3 +146,27 @@
 </body>
 
 </html>
+
+
+
+<!-- 280 
+100,50,20,10,5,2,1
+count = 0 
+
+280 >= 100
+   count = count + 280 / 100 //2
+   amount = amount % 100 //80
+
+80 >= 50
+   count = count + 80 / 50 //1
+   amount = amount % 50 //30
+
+30 >= 20 
+   count = count + 30 / 20 //1
+   amount = amount % 20 //10
+
+10 >= 10
+   count = count + 10 / 10 //1
+   amount = amount % 10 //0
+
+=5 -->

@@ -33,6 +33,13 @@
             padding-top: 25px;
             height: 50px;
             margin-left: 35%;
+            transition: .5s;
+        }
+        p:hover{
+            border: 1px solid aquamarine;
+            border-radius: 10px;
+            background-color:aquamarine;
+            color:black;
         } 
     </style>
 </head>
@@ -46,10 +53,10 @@ $currentDateTime = date('Y-m-d H:i:s');
 
 echo "<h2>Current Date and Time in Different Formats : <h2><br>";
 
-echo "<p><strong>1. YYYY-MM-DD HH:MM:SS - </strong>" . date('Y-m-d H:i:s') . "</p>";
-echo "<p><strong>2. DD-MM-YYYY HH:MM:SS - </strong>" . date('d-m-Y H:i:s') . "</p>";
-echo "<p><strong>3. MM/DD/YYYY HH:MM AM/PM - </strong>" . date('m/d/Y h:i A') . "</p>";
-echo "<p><strong>4. Day, Month DD, YYYY - </strong>" . date('l, F d, Y') . "</p>";
+echo "<p><strong>1. YYYY-MM-DD HH:MM:SS - </strong>" . date('Y-m-d H:i:s') . "</p>"; //2025-02-07 12:00:05
+echo "<p><strong>2. DD-MM-YYYY HH:MM:SS - </strong>" . date('d-m-Y H:i:s') . "</p>"; //07-02-2025 12:00:05
+echo "<p><strong>3. MM/DD/YYYY HH:MM AM/PM - </strong>" . date('m/d/Y h:i A') . "</p>"; //02/07/2025 12:00 PM
+echo "<p><strong>4. Day, Month DD, YYYY - </strong>" . date('l, F d, Y') . "</p>"; //Friday, February 07, 2025
 ?>
 
 </body>
