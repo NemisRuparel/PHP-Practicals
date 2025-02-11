@@ -62,7 +62,7 @@ The method $childInstance->invokeParentMethod(); is called: <br>
 It first prints "Calling Parent Class Method Using Child Class". <br>
 Then, it invokes displayMessage() from ParentClass, which prints "This is a method from the Parent Class".
 </div>
-<?php
+<?php 
      class ParentClass {
         public function displayMessage() {
             echo "<h2>This is a method from the Parent Class</h2>";

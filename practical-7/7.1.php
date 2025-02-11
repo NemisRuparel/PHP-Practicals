@@ -40,11 +40,12 @@
             margin-left: 1%;
             
         }
-        
+    
     </style>
 </head>
 <body>
-    <div class="container">
+    
+<div class="container">
 <h1>1. Class Definition (Base)</h1>
 <h3>Constructor (__construct())</h3>
 <p>Automatically called when an object of the class is created. <br>
