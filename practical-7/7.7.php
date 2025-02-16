@@ -3,34 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Method Overloading</title>
     <style>
-        <style>
-        *{
+        * {
             color: black;
         }
-        body{
+
+        body {
             background-color: aquamarine;
         }
-        h2{
+
+        h2 {
             text-align: center;
         }
-        hr{
+
+        hr {
             width: 50%;
-            /* height: 2px; */
             border: 1px solid black;
             background-color: black;
-
         }
-        .half1{
+
+        .half1 {
             width: 48%;
             border: 1px solid white;
             margin-left: 51%;
             border-radius: 10px;
-            margin-top: -300px;
+            margin-top: -350px;
             background-color: white;
         }
-        .container{
+
+        .container {
             width: 48%;
             border: 1px solid white;
             color: black;
@@ -39,49 +41,60 @@
             padding-bottom: 10px;
             padding-left: 10px;
             margin-left: 1%;
-            
         }
     </style>
 </head>
 <body>
-<div class="container">
-<h1>1. Parent Class (ParentClass)</h1>
-<h3>Method: displayMessage()</h3>
-<p>Prints "Parent Class:". <br>
-This method will be overridden in the child class.
-<br></p>
-<h1>2. Child Class (ChildClass)</h1>
-<h3>Inheritance</h3>
-ChildClass extends ParentClass, meaning it inherits its methods.<br>
-<h3>Overridden Method: displayMessage()</h3>
-Calls the parent class method using parent::displayMessage();. <br>
-Prints "Overridden Method Called Using Child Class:".<br><br>
-<h1>3. Object Creation and Method Execution</h1>
-A ChildClass object $childInstance is created. <br>
-Calling $childInstance->displayMessage(); does the following: <br>
-<b>
-1. Executes parent::displayMessage();, which prints "Parent Class:". <br>
-2. Then prints "Overridden Method Called Using Child Class:". <br>
-</b>
-</div>
+    <div class="container">
+        <h1>1. Class (OverloadExample)</h1>
+        <h3>Method: display()</h3>
+        <p>The method `display()` works differently based on the number of arguments. <br></p>
+
+        <h1>2. Method Overloading</h1>
+        - If called without arguments, it prints `"No parameters passed"`.<br>
+        - If called with **one** argument, it prints `"One parameter: value"`.<br>
+        - If called with **two** arguments, it prints `"Two parameters: value1, value2"`.<br>
+
+        <h1>3. Object Creation and Method Invocation</h1>
+        - An object `$obj` of `OverloadExample` is created.<br>
+        - `$obj->display();` prints `"No parameters passed"`.<br>
+        - `$obj->display("Hello");` prints `"One parameter: Hello"`.<br>
+        - `$obj->display("Hello", "World");` prints `"Two parameters: Hello, World"`.<br>
+    </div>
+
     <?php
-    class ParentClass {
-        public function displayMessage() {
-            echo "<div class='half1'>";
-            echo "<h2>Parent Class:</h2><hr>";
+    class OverloadExample {
+        public function display() {
+            $numArgs = func_num_args();
+            $args = func_get_args();
+
+            if ($numArgs == 0) {
+                echo "<h2>No parameters passed</h2>";
+            } elseif ($numArgs == 1) {
+                echo "<h2>One parameter: " . $args[0] . "</h2>";
+            } elseif ($numArgs == 2) {
+                echo "<h2>Two parameters: " . $args[0] . ", " . $args[1] . "</h2>";
+            } else {
+                echo "<h2>Too many parameters</h2>";
+            }
         }
     }
 
-    class ChildClass extends ParentClass {
-        public function displayMessage() {
-            parent::displayMessage();
-            echo "<h2>Overridden Method Called Using Child Class:</h2>";
-            echo "</div>";
-        }
-    }
+    echo "<div class='half1'>";
+    echo "<h2>Method Overloading Output</h2><hr>";
 
-    $childInstance = new ChildClass();
-    $childInstance->displayMessage();
+    $obj = new OverloadExample();
+    echo "<h4>Calling without arguments:</h4>";
+    $obj->display();
+
+    echo "<h4>Calling with one argument:</h4>";
+    $obj->display("Hello");
+
+    echo "<h4>Calling with two arguments:</h4>";
+    $obj->display("Hello", "World");
+
+    echo "</div>";
     ?>
+
 </body>
-</html> 
+</html>
