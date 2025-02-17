@@ -67,11 +67,11 @@ The Basemethod() is called using $p1->Basemethod();  , displaying its message. <
                 function __construct(){
                     echo "<div class='half1'><h2>This is Constructor of class Base<br><hr></h2>";
                 }
-                public function Basemethod(){
-                    echo "<h2>Public method of class Base <br><hr></h2>";
-                }
                 function __destruct(){
                     echo "<h2>This is destructor of class Base</h2></div>";
+                }
+                public function Basemethod(){
+                    echo "<h2>Public method of class Base <br><hr></h2>";
                 }
             }
             

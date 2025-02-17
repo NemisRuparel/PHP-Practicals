@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiple Inheritance</title>
+    <title>Document</title>
     <style>
         * {
             color: black;
@@ -46,46 +46,47 @@
 </head>
 <body>
     <div class="container">
-        <h1>1. Grandparent Class (Grandparent)</h1>
+        <h1>1. Grandparent Interface</h1>
         <h3>Method: showGrandparent()</h3>
-        <p>Defined in `Grandparent`, prints "This is a method from Grandparent". <br></p>
+        <p>Defined in GrandparentInterface, prints "This is a method from Grandparent". <br></p>
 
-        <h1>2. Parent Class (ParentClass)</h1>
-        <h3>Inheritance</h3>
-        `ParentClass` extends `Grandparent`, meaning it inherits its methods.<br>
-        
+        <h1>2. Parent Interface</h1>
         <h3>Method: showParent()</h3>
         Prints "This is a method from Parent".<br>
 
-        <h1>3. Child Class (ChildClass)</h1>
-        <h3>Inheritance</h3>
-        `ChildClass` extends `ParentClass`, meaning it inherits both `showGrandparent()` and `showParent()`. <br>
-        
+        <h1>3. Child Class (Implements Both Interfaces)</h1>
+        <h3>Implementation</h3>
+        ChildClass implements both GrandparentInterface and ParentInterface.<br>
+
         <h3>Method: showAll()</h3>
-        Prints "Calling Methods from Grandparent and Parent" and then calls `showGrandparent()` and `showParent()`.<br>
+        Prints "Calling Methods from Grandparent and Parent" and then calls showGrandparent() and showParent().<br>
 
         <h1>4. Object Creation and Method Invocation</h1>
-        An object `$child` of class `ChildClass` is created.<br>
-        The method `$child->showAll();` is called.<br>
+        An object $child of class ChildClass is created.<br>
+        The method $child->showAll(); is called.<br>
         - First prints "Calling Methods from Grandparent and Parent".<br>
-        - Then invokes `showGrandparent()` (prints "This is a method from Grandparent").<br>
-        - Finally invokes `showParent()` (prints "This is a method from Parent").<br>
+        - Then invokes showGrandparent() (prints "This is a method from Grandparent").<br>
+        - Finally invokes showParent() (prints "This is a method from Parent").<br>
     </div>
 
     <?php
-    class Grandparent {
+    interface GrandparentInterface {
+        public function showGrandparent();
+    }
+
+    interface ParentInterface {
+        public function showParent();
+    }
+
+    class ChildClass implements GrandparentInterface, ParentInterface {
         public function showGrandparent() {
             echo "<h2>This is a method from Grandparent</h2>";
         }
-    }
 
-    class ParentClass extends Grandparent {
         public function showParent() {
             echo "<h2>This is a method from Parent</h2>";
         }
-    }
 
-    class ChildClass extends ParentClass {
         public function showAll() {
             echo "<div class='half1'>";
             echo "<h2>Calling Methods from Grandparent and Parent:</h2><hr>";

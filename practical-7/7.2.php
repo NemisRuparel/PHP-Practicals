@@ -53,8 +53,8 @@
         
         <h3>Setter Method: __set($property, $value)</h3>
         Takes two parameters: <br>
-        - `$property` (the property name) <br>
-        - `$value` (the value to assign) <br>
+        - $property (the property name) <br>
+        - $value (the value to assign) <br>
         Assigns the value only if the property exists inside the class. <br>
 
         <h3>Getter Method: __get($property)</h3>
@@ -73,20 +73,19 @@
     {
         private $name;
         private $age;
-
+        
         public function __set($property, $value)
         {
-            if (property_exists($this, $property)) {
                 $this->$property = $value;
-            }
+            
         }
 
         public function __get($property)
         {
-            if (property_exists($this, $property)) {
-                return $this->$property;
-            }
-            return null;
+            // if (property_exists($this, $property)) {
+            //     return $this->$property;
+            // }
+            return $this->$property;
         }
     }
 

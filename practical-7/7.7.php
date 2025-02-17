@@ -48,18 +48,18 @@
     <div class="container">
         <h1>1. Class (OverloadExample)</h1>
         <h3>Method: display()</h3>
-        <p>The method `display()` works differently based on the number of arguments. <br></p>
+        <p>The method display() works differently based on the number of arguments. <br></p>
 
         <h1>2. Method Overloading</h1>
-        - If called without arguments, it prints `"No parameters passed"`.<br>
-        - If called with **one** argument, it prints `"One parameter: value"`.<br>
-        - If called with **two** arguments, it prints `"Two parameters: value1, value2"`.<br>
+        - If called without arguments, it prints "No parameters passed".<br>
+        - If called with one argument, it prints "One parameter: value".<br>
+        - If called with two arguments, it prints "Two parameters: value1, value2".<br>
 
         <h1>3. Object Creation and Method Invocation</h1>
-        - An object `$obj` of `OverloadExample` is created.<br>
-        - `$obj->display();` prints `"No parameters passed"`.<br>
-        - `$obj->display("Hello");` prints `"One parameter: Hello"`.<br>
-        - `$obj->display("Hello", "World");` prints `"Two parameters: Hello, World"`.<br>
+        - An object $obj of OverloadExample is created.<br>
+        - $obj->display(); prints "No parameters passed".<br>
+        - $obj->display("Hello"); prints "One parameter: Hello".<br>
+        - $obj->display("Hello", "World"); prints "Two parameters: Hello, World".<br>
     </div>
 
     <?php

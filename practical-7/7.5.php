@@ -48,15 +48,15 @@
     <div class="container">
         <h1>1. Parent Class (ParentClass)</h1>
         <h3>Method: showMessage()</h3>
-        <p>Defined in `ParentClass`, prints "This is a method from Parent Class". <br></p>
+        <p>Defined in ParentClass, prints "This is a method from Parent Class". <br></p>
 
         <h1>2. Child Class (ChildClass)</h1>
         <h3>Method Overriding</h3>
-        The `showMessage()` method is redefined in `ChildClass`, which prints "This is an overridden method from Child Class". <br>
+        The showMessage() method is redefined in ChildClass, which prints "This is an overridden method from Child Class". <br>
 
         <h1>3. Object Creation and Method Invocation</h1>
-        - An object `$parentObj` of `ParentClass` calls `$parentObj->showMessage();`, which prints "This is a method from Parent Class". <br>
-        - An object `$childObj` of `ChildClass` calls `$childObj->showMessage();`, which prints "This is an overridden method from Child Class".<br>
+        - An object $parentObj of ParentClass calls $parentObj->showMessage();, which prints "This is a method from Parent Class". <br>
+        - An object $childObj of ChildClass calls $childObj->showMessage();, which prints "This is an overridden method from Child Class".<br>
     </div>
 
     <?php
