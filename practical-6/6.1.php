@@ -64,14 +64,14 @@
             text-align: center;
         }
         #btn1{
-            margin-left: 555px;
+            margin-left: 690px;
         }
         #btn2{
             margin-left: -535px;
         }
         table{
             border: 4px solid black;
-            margin-left: 380px;
+            margin-left: 580px;
             border-collapse: collapse;
             background-color:rgba(35, 200, 145, 0.53);
         }

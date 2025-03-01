@@ -28,10 +28,10 @@
             display: flex;
         }
         #btn1{
-            margin-left: 560px;
+            margin-left: 750px;
         }
         #btn2{
-            margin-left: -535px;
+            margin-left: -730px;
         }
         form input {
             background-color: aliceblue;
