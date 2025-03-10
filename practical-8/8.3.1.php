@@ -17,7 +17,7 @@
             /* margin-top: 100px; */
         }
         body{
-            background-color: aquamarine;
+            background-color: beige;
         }
         .container{
             margin-top: 5%;

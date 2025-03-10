@@ -4,7 +4,7 @@
     <title>Confirm Booking</title>
     <style>
         body{
-            background-color: aquamarine;
+            background-color: beige;
         }
         .display{
             

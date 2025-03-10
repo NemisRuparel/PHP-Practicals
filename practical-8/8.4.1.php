@@ -18,7 +18,7 @@
             /* margin-top: 100px; */
         }
         body{
-            background-color: aquamarine;
+            background-color: beige;
         }
         .container{
             margin-top: 5%;
@@ -56,7 +56,7 @@
             border-radius: 10px;
             background-color: black;
             color: white;
-            margin-left: 100px;
+            margin-left: 90px;
         }
         form button:hover {
             background-color: white;

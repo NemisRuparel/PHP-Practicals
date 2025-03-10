@@ -22,7 +22,7 @@
         } 
         
         body{
-            background-color: aquamarine;
+            background-color: beige;
         }
         .display{
             

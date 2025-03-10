@@ -4,80 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Information</title>
+    <title>Document</title>
     <style>
-        * {
+        *{
+            font-family: arial;
             margin: 0;
             padding: 0;
-            font-family: cursive;
         }
-
         body {
-            margin-top: 100px;
-            background-color: aquamarine;
-            text-align: center;
+            background-color: beige;
         }
 
-        form {
-            display: flex;
-            flex-direction: column;
-            background-color: white;
-            gap: 10px;
-            border: 1px solid white;
-            box-shadow: 0px 0px 20px black;
-            width: 60%;
-            margin: auto;
-            padding: 20px;
+        .container {
+            height: 820px;
+            width: 700px;
+            background-color: #ddd;
+            margin-left: 520px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
             border-radius: 10px;
-            margin-bottom: 100px;
+            box-shadow: 0px 0px 10px black;
         }
 
-        input, textarea {
-            height: 50px;
-            width: 90%;
-            padding-left: 10px;
-            border: 1px solid black;
-            border-radius: 10px;
-            margin: auto;
-        }
-
-        textarea {
-            height: 80px;
-        }
-
-        
-
-        button {
-            color: white;
-            background-color: black;
-            border-radius: 10px;
-            height: 50px;
-            width: 150px;
-            border: none;
+        .h1class {
+            background-color: #aaa;
+            height: 90px;
+            width: 100%;
+            align-content: center;
+            border-top: 1px solid #aaa;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-left: 1px solid #aaa;
+            border-right: 1px solid #aaa;
+            border-bottom: none;
+            margin-left: -1px;
+            margin-top: -1px;
+            margin-bottom: 20px;
             
-            transition: all 0.3s;
-            margin-left: 40%;
         }
-
-        button:hover {
-            color: black;
-            background-color: white;
-            border: 1px solid black;
+        label{
+            margin-left: 40px;
+            font-size: 20px;
+            
         }
-
+        .name input[type="text"]{
+            margin-top: 5px;
+            margin-left: 40px;
+            width: 278px;
+            height: 30px;
+            border: 1px solid white;
+            border-radius: 5px;
+            outline: none;
+        }
+        input{
+            margin-top: 5px;
+            margin-left: 40px;
+            width: 600px;
+            height: 30px;
+            border: 1px solid white;
+            border-radius: 5px;
+            outline: none;
+        }
+        
+        input:focus{
+            box-shadow: 0px 0px 10px beige;
+            border: none;
+        }
+        .name{
+            display: flex;
+        }
         .gender{
         display: flex;
-        width: 950px;
+        width: 1000px;
         border-radius: 10px;
-        margin-left: 45px;
+        margin-left: 40px;
         gap: 545px;
+     
     }
 .gender .inner{
-    height: 60px;
-    width: 200px;
+    height: 35px;
+    width: 275px;
     display: flex;
-    border: 1px solid black;
-    border-radius: 10px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    border-radius: 5px;
     align-items:center;
 }
 .gender input{
@@ -86,41 +96,93 @@
     width: 20px;
 }
 .gender label{
-    font-size: 14px;
+    font-size: 16px;
+}
+.submitbtn{
+    margin-left:40px;
+    margin-top: 15px;
+    height: 40px;
+    width: 230px;
+    background-color: #0074FE;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #0074FE;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.submitbtn:hover{
+    transition: .5s;
+    background-color: #0025FF;
 }
     </style>
 </head>
 
 <body>
+    <form action="8.1.2.php"method="POST">
 
-    <form action="8.1.2.php" method="POST">
-
-
-        <h1>Employee Information Form</h1>
-        <input type="text" name="efirstname" placeholder="Enter first name" required>
-        <input type="text" name="elastname" placeholder="Enter last name" required>
-        <input type="text" name="eccompany" placeholder="Enter your current company" required>
-        <input type="text" name="epcompany" placeholder="Enter your past company" required>
-        <input type="text" name="eexperience" placeholder="Enter your experience (in years)" required>
-        <input type="number" name="esalary" placeholder="Enter your salary (in ₹)" required>
-        <input type="email" name="eemail" placeholder="Enter your email address" required>
-
-
-        <input type="date" name="ebdate" required>
-        <textarea name="eaddress" placeholder="Enter Address" required></textarea>
-        <div class="gender">
-            <div class="inner">
+        <div class="container">
+            <div class="h1class">
+                <h1 align="center">Emplyeee Information</h1>
+            </div>
+            
+            <label for="name"><b>Your Name : </b></label> <br>
+            <div class="name">
+                <input type="text"name="fname" placeholder="&nbsp;&nbsp;&nbsp;First Name" required>
+                <input type="text"name="lname" placeholder="&nbsp;&nbsp;&nbsp;Last Name" required>
+            </div>
+            
+            <br>
+            
+            <label for="currcomp"><b>Your Current Company : </b></label>
+            <input type="text"name="currcomp" required>
+            
+            <br><br>
+            
+            <label for="pastcomp"><b>Your Past Company : </b></label>
+            <input type="text"name="pastcomp">
+        
+            <br><br>
+            
+            <label for="exp"><b>Your experience : </b></label>
+            <input type="number"name="exp" required>
+            
+            <br><br>
+            
+        <label for="pastcomp"><b>Salary : </b></label>
+        <input type="range" name="salary" min="10000" max="100000" value="50000" step="1000"
+    oninput="this.nextElementSibling.value = this.value">
+    <output>50000</output>
+    
+    <br><br>
+    
+    <label for="email"><b>Your Email : </b></label>
+    <input type="email"name="email" required>
+    
+    <br><br>
+    
+    <label for="mobileno"><b>Phone No. (+91) : </b></label>
+    <input type="tel"name="mobileno" required>
+    
+    <br><br>
+    <label for="gender"><b>Gender : </b></label> <br>
+    <div class="gender">
+        <div class="inner">
                 <label style="margin-left:50px">Male</label>
                 <input type="radio" name="gender" value="Male" required>
             </div>
-            <div class="inner">
+            <div class="inner"style="margin-left:-500px">
                 <label style="margin-left:50px">Female</label>
                 <input type="radio" name="gender" value="Female" required>
             </div>
         </div>
-            <button type="submit" name="submit">Submit</button>
-    </form>
-
+        
+        <button type="submit" class="submitbtn">Print Details...!</button>
+    </div>
+    
+</form>
+    
+    
 </body>
 
 </html>
