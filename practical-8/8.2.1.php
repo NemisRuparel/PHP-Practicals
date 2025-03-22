@@ -155,7 +155,7 @@
             <label for="currcomp"><b>Your Current Company : </b></label>
             <input type="text" name="currcomp">
 *8
-
+x
             <br><br>
 
             <label for="pastcomp"><b>Your Past Company (*): </b></label>

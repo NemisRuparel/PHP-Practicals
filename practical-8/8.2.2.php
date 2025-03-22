@@ -134,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class='box'><b>Salary:</b> ₹$salary</div>
                 <div class='box'><b>Email:</b> $email</div>
                 <div class='box'><b>Phone No.:</b> +91$mobileno</div>";
-        
+         
         if (!empty($gender)) {
             echo "<div class='box'><b>Gender:</b> $gender</div>";
         }
