@@ -114,7 +114,7 @@
                 <input type="password" id="password" name="password" maxlength="12" required>
             </div>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" name="submitbtn">
         </form>
 
         <!-- <?php

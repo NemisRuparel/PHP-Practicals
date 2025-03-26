@@ -73,7 +73,7 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form method="POST" action="">
+        <form method="POST" action="auth.php">
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" maxlength="30" required>
@@ -84,7 +84,7 @@
                 <input type="password" id="password" name="password" maxlength="12" required>
             </div>
 
-            <input type="submit" value="Login">
+            <input type="submit" value="Login" name="loginbtn">
         </form>
 
         <?php
