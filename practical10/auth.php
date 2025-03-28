@@ -22,8 +22,8 @@ if (isset($_POST['submitbtn'])) {
     $gender = $_POST['gender'];
     $paswd = $_POST['password'];
 
-    $sql = "INSERT INTO employee (name, currcomp, pastcomp, exp, email, mono, gender, password, profile_photo) 
-            VALUES ('$name', '$currcomp', '$pastcomp', $exp, '$email', $mono, '$gender', '$paswd', NULL)";
+    $sql = "INSERT INTO employee (name, currcomp, pastcomp, exp, email, mobileno, gender, password, profile_photo) 
+            VALUES ('$name', '$currcomp', '$pastcomp', $exp, '$email', $mono, '$gender', '$paswd', '')";
     
     $result = mysqli_query($conn, $sql);
     
@@ -49,6 +49,7 @@ if (isset($_POST['loginbtn'])) {
         exit();
     } else {
         echo "<script>window.alert('not logged in')</script>";
+        header("location:signin.php");
     }
 }
 

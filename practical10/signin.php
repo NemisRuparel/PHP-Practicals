@@ -120,14 +120,14 @@
         <!-- <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Retrieve form data
-            $name = htmlspecialchars($_POST['name']);
-            $currcomp = htmlspecialchars($_POST['currcomp']);
-            $pastcomp = htmlspecialchars($_POST['pastcomp']);
-            $exp = htmlspecialchars($_POST['exp']);
-            $email = htmlspecialchars($_POST['email']);
-            $mono = htmlspecialchars($_POST['mono']);
-            $gender = htmlspecialchars($_POST['gender']);
-            $password = htmlspecialchars($_POST['password']);
+            $name = $_POST['name'];
+            $currcomp = $_POST['currcomp'];
+            $pastcomp = $_POST['pastcomp'];
+            $exp = $_POST['exp'];
+            $email = $_POST['email'];
+            $mono = $_POST['mono'];
+            $gender = $_POST['gender'];
+            $password = $_POST['password'];
 
             // Display the submitted data
             echo "<div class='output'>";
