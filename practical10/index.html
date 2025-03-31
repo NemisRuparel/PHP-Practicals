@@ -3,59 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Employee Portal</title>
     <style>
+
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
             background-color: #f4f4f4;
+            position: relative;
+        }
+
+
+        header {
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #28a745, #218838);
+            color: white;
+            font-size: 24px;
+            border-bottom-left-radius: 50% 10px;
+            border-bottom-right-radius: 50% 10px;
+        }
+
+        section {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-box {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+            gap: 15px;
+            margin-top: 20px;
         }
-        .btn-box{
-            display: flex;
-            gap: 10px;
-        }
-        button{
-            width: 120px;
-            padding: 10px;
+
+        button {
+            width: 140px;
+            padding: 12px;
             background-color: #28a745;
             border: none;
-            border-radius: 4px;
-            color: #fff;
+            border-radius: 50px;
+            color: white;
             font-size: 16px;
             cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
         }
-        button:hover{
-            background-color: #218838;
 
+        button:hover {
+            background-color: #218838;
+            box-shadow: 0 0 15px rgba(40, 167, 69, 0.8);
         }
-        .container{
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 5px #878484;
-            width: 400px;
-        }
+
     </style>
 </head>
 <body>
-    <div class="container">
 
-        <h1>
-            Welcome Employeee..!
-        </h1>
+    <header>
+        <h1>Welcome to the Employee Portal</h1>
+        <p>Work, Grow, Succeed</p>
+    </header>
+
+    <section>
+        <h2>Hello, Employee! 👋</h2>
+        <p>Manage your work efficiently with our smart tools.</p>
         <div class="btn-box">
-            
-            <form action="signin.php">
-                <button type="submit">SignIn</button>
-            </form>
-            <form action="login.php">
-                <button type="submit">LogIn</button>
-            </form>
+            <button onclick="window.location.href='signin.php'">Sign In</button>
+            <button onclick="window.location.href='login.php'">Log In</button>
         </div>
-    </div>
-    </body>
+    </section>
+
+    <section>
+        <h2>Why Choose Us?</h2>
+        <p>We provide a seamless work experience with real-time updates and smart collaboration tools.</p>
+    </section>
+
+</body>
 </html>
