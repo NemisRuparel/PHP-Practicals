@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Check if user is logged in
 if (!isset($_SESSION['email'])) {
     header("location: login.php");
     exit();
@@ -18,13 +17,12 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Get employee information
+
 $email = $_SESSION['email'];
 $sql = "SELECT * FROM employee WHERE email='$email'";
 $result = mysqli_query($conn, $sql);
 $employee = mysqli_fetch_assoc($result);
 
-// Handle photo upload
 if (isset($_POST['upload_photo'])) {
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0) {
         $target_dir = "uploads/";
@@ -39,7 +37,7 @@ if (isset($_POST['upload_photo'])) {
     }
 }
 
-// Handle password change
+
 if (isset($_POST['change_password'])) {
     $current_password = $_POST['current_password'];
     $new_password = $_POST['new_password'];
@@ -65,7 +63,7 @@ if (isset($_POST['change_password'])) {
     }
 }
 
-// Handle profile deletion
+
 if (isset($_GET['action']) && $_GET['action'] == 'delete') {
     $sql = "DELETE FROM employee WHERE email='$email'";
     $result = mysqli_query($conn, $sql);
@@ -76,7 +74,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete') {
     }
 }
 
-// Handle logout
+
 if (isset($_GET['action']) && $_GET['action'] == 'logout') {
     session_destroy();
     header("location: login.php");
@@ -250,7 +248,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
             ?>
         </div>
 
-        <!-- Change Password Section -->
         <div class="password-change" id="password-change">
             <h3>Change Password</h3>
             <form method="POST">
@@ -268,12 +265,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
         </div>
     </div>
 
-    <script>
-        function showInfo() {
-            document.getElementById('employeeInfo').style.display = 'block';
-            document.getElementById('employeeInfo').scrollIntoView({behavior: 'smooth'});
-        }
-    </script>
 </body>
 </html>
 

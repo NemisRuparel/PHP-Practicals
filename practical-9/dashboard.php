@@ -11,10 +11,8 @@ if (!isset($_SESSION["user_id"])) {
 }
 
 if (isset($_POST["logout"])) {
-    // session_unset();
     session_destroy();
     header("Location: login.php");
-    // exit();
 }
 ?>
 

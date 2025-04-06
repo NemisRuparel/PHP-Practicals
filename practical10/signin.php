@@ -117,32 +117,6 @@
             <input type="submit" value="Submit" name="submitbtn">
         </form>
 
-        <!-- <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Retrieve form data
-            $name = $_POST['name'];
-            $currcomp = $_POST['currcomp'];
-            $pastcomp = $_POST['pastcomp'];
-            $exp = $_POST['exp'];
-            $email = $_POST['email'];
-            $mono = $_POST['mono'];
-            $gender = $_POST['gender'];
-            $password = $_POST['password'];
-
-            // Display the submitted data
-            echo "<div class='output'>";
-            echo "<h3>Submitted Data:</h3>";
-            echo "Name: $name<br>";
-            echo "Current Company: $currcomp<br>";
-            echo "Past Company: $pastcomp<br>";
-            echo "Experience: $exp years<br>";
-            echo "Email: $email<br>";
-            echo "Mobile Number: $mono<br>";
-            echo "Gender: $gender<br>";
-            echo "Password: $password<br>";
-            echo "</div>";
-        }
-        ?> -->
     </div>
 </body>
 </html>
