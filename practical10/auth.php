@@ -9,7 +9,7 @@ $dbname = "practical10";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+    echo "Sorry ..! There was some problem occured <br> Please try again later ...!";
 }
 
 if (isset($_POST['submitbtn'])) {

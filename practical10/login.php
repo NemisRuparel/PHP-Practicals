@@ -44,7 +44,7 @@
         input[type="submit"] {
             width: 100%;
             padding: 10px;
-            background-color: #007bff;
+            background-color: #28a745;
             border: none;
             border-radius: 4px;
             color: #fff;
@@ -52,7 +52,7 @@
             cursor: pointer;
         }
         input[type="submit"]:hover {
-            background-color: #0056b3;
+            background-color: #218838;
         }
         .message {
             margin-top: 15px;
@@ -86,11 +86,6 @@
 
             <input type="submit" value="Login" name="loginbtn">
         </form>
-
-        <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {}
-            
-        ?>
     </div>
 </body>
 </html>

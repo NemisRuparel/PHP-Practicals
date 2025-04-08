@@ -2,7 +2,7 @@
 $user_id = isset($_COOKIE["user_id"]) ? $_COOKIE["user_id"] : "Not set";
 
 if (isset($_POST["clear"])) {
-    setcookie("user_id", "", time() - 3600, "/"); // Expire cookie
+    setcookie("user_id", "", time() - 3600, "/");
     header("Location: set_cookie.php");
     exit();
 }

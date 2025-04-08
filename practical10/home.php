@@ -3,7 +3,6 @@ session_start();
 
 if (!isset($_SESSION['email'])) {
     header("location: login.php");
-    exit();
 }
 
 $servername = "localhost";
@@ -14,7 +13,7 @@ $dbname = "practical10";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+    echo "Sorry ..! There was some problem occured <br> Please try again later ..!";
 }
 
 
@@ -27,7 +26,7 @@ if (isset($_POST['upload_photo'])) {
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0) {
         $target_dir = "uploads/";
         if (!file_exists($target_dir)) {
-            mkdir($target_dir, 0777, true);
+            mkdir($target_dir, 777, true);
         }
         $target_file = $target_dir . basename($_FILES["photo"]["name"]);
         if (move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)) {
@@ -210,7 +209,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 <body>
 
     <div class="navbar">
-        <a href="#" onclick="showInfo()">Display Info</a>
+        <a href="#">Display Info</a>
         <a href="#photo-upload">Add Profile Photo</a>
         <a href="#password-change">Change Password</a>
         <a href="?action=delete" onclick="return confirm('Are you sure you want to delete your profile?')">Delete Profile</a>
