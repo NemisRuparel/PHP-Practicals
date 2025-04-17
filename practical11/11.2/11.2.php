@@ -1,12 +1,11 @@
-<!-- zgwj cfuw hlhj aqqx -->
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
-$senderEmail = 'nemisruparel07@gmail.com';
-$senderName = 'Nemis Ruparel';
+$senderEmail = 'Sender_email_id';
+$senderName = 'Sender_username';
 
 $successMessage = '';
 $errorMessage = '';
@@ -22,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
         $mail->Username   = $senderEmail;
-        $mail->Password   = 'zgwjcfuwhlhjaqqx';
+        $mail->Password   = 'Sender_Email_Password'; //Enter Your App Password
         $mail->SMTPSecure = 'tls';
         $mail->Port       = 587;
         $mail->setFrom($senderEmail, $senderName);
@@ -35,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <p>This is a <strong>test email</strong> sent using <em>PHPMailer</em> via Gmail SMTP.</p>
             </div>
         ';
-        $mail->AltBody = 'This is a test email sent from PHP using PHPMailer and SMTP.';
         $mail->send();
 
         $successMessage = "Mail from <strong>$senderEmail</strong> to <strong>$receiverEmail</strong> was sent successfully.";
@@ -66,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         .email-form input[type="email"],
         .email-form input[type="submit"] {
-            width: 100%;
+            width: 91%;
             padding: 12px 15px;
             margin: 10px 0;
             border-radius: 4px;
@@ -74,6 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             font-size: 16px;
         }
         .email-form input[type="submit"] {
+            width: 100%;
             background-color: #007BFF;
             color: #fff;
             border: none;

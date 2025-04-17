@@ -48,7 +48,8 @@ if (isset($_POST['loginbtn'])) {
         header("location: home.php");
         exit();
     } else {
-        echo "<script>window.alert('not logged in')</script>";
+        echo "<script>window.alert('not logged in,
+                                    Please SignIn..!')</script>";
         header("location:signin.php");
     }
 }

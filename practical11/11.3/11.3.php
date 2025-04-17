@@ -37,14 +37,14 @@
 
         <?php
         $student = array(
-            "name" => "Nemis Ruparel",
+             "name" => "Nemis Ruparel",
             "enrollment" => 236270307091,
             "city" => "Porbandar",
             "college" => "Government Polytechnic Porbandar"
         );
 
         $jsonString = json_encode($student, JSON_PRETTY_PRINT);
-        $arrayBack = json_decode($jsonString, true);
+        $arrayBack = json_decode($jsonString, true,);
         ?>
 
         <div class="section">
